@@ -1,0 +1,26 @@
+.toggle {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--header-action-height);
+  padding: 0 0.85rem;
+  min-width: 3.1rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 0.45rem;
+  background: rgba(48, 35, 21, 0.85);
+  color: var(--gold-soft);
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+
+  &:hover {
+    border-color: var(--gold);
+    color: #fff5e0;
+  }
+}

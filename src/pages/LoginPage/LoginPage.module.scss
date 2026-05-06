@@ -1,0 +1,14 @@
+.page {
+  width: min(460px, 100%);
+  margin: 0 auto;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+  display: grid;
+  gap: 0.95rem;
+
+  h1 {
+    color: var(--gold-soft);
+  }
+}

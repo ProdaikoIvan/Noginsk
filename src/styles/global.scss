@@ -1,0 +1,46 @@
+:root {
+  font-family: Tahoma, Verdana, Segoe UI, Arial, sans-serif;
+  color: #f4efe2;
+  background-color: #080808;
+  --gold: #d9a84e;
+  --gold-soft: #f7d28a;
+  --panel-bg: rgba(16, 14, 13, 0.84);
+  --panel-border: #6c5227;
+  --text-muted: #cabd9f;
+  --header-action-height: 2.5rem;
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background-image:
+    linear-gradient(rgba(6, 6, 6, 0.88), rgba(6, 6, 6, 0.92)),
+    url("https://crazzd.com/images/s4d9JN.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}

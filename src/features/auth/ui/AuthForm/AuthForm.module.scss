@@ -1,0 +1,33 @@
+.form {
+  display: grid;
+  gap: 0.8rem;
+
+  label {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  input {
+    border: 1px solid #4d3a1f;
+    border-radius: 0.5rem;
+    background: rgba(13, 11, 9, 0.9);
+    color: #f2e8d6;
+    padding: 0.6rem 0.7rem;
+  }
+
+  button {
+    margin-top: 0.4rem;
+    border: 1px solid #bd8e3f;
+    background: linear-gradient(180deg, #dcb36b, #b07b33);
+    color: #2b1d0e;
+    font-weight: 700;
+    border-radius: 0.6rem;
+    padding: 0.55rem 0.9rem;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,164 @@
+.wrapper {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.pageHeader {
+  padding: 1.25rem 1.35rem;
+  border-radius: 1rem;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.pageTitle {
+  margin: 0;
+  color: var(--gold-soft);
+  font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+  letter-spacing: 0.03em;
+}
+
+.lead {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 900px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(200px, 260px) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.toc {
+  position: sticky;
+  top: 4.5rem;
+  padding: 1rem 1rem 1.1rem;
+  border-radius: 0.85rem;
+  border: 1px solid var(--panel-border);
+  background: rgba(12, 10, 8, 0.92);
+  max-height: calc(100vh - 5.5rem);
+  overflow: auto;
+}
+
+.tocTitle {
+  margin: 0 0 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.tocList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.tocButton,
+.tocButtonActive {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.35rem;
+  font: inherit;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #e8d7b5;
+}
+
+.tocButton:hover {
+  background: rgba(217, 168, 78, 0.08);
+  color: var(--gold-soft);
+  border-color: #3a2c18;
+}
+
+.tocButtonActive {
+  background: rgba(217, 168, 78, 0.14);
+  color: var(--gold-soft);
+  border-left: 3px solid var(--gold);
+  padding-left: calc(0.5rem - 2px);
+}
+
+.content {
+  min-height: 12rem;
+}
+
+.detail {
+  padding: 1.25rem 1.35rem;
+  border-radius: 0.85rem;
+  border: 1px solid #3a2c18;
+  background: rgba(18, 15, 12, 0.88);
+}
+
+.detailTitle {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  color: var(--gold-soft);
+  letter-spacing: 0.02em;
+}
+
+.detailText {
+  margin: 0 0 0.65rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+
+  &:last-of-type {
+    margin-bottom: 0.65rem;
+  }
+}
+
+.detailList {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: #f1e4cb;
+  display: grid;
+  gap: 0.45rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .toc {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .tocList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+
+    li {
+      flex: 1 1 auto;
+      min-width: min(100%, 10rem);
+    }
+  }
+
+  .tocButton,
+  .tocButtonActive {
+    width: 100%;
+    border: 1px solid #3a2c18;
+    text-align: center;
+  }
+
+  .tocButtonActive {
+    border-left: 1px solid var(--gold);
+    border-color: var(--gold);
+    padding-left: 0.5rem;
+  }
+}
