@@ -1,13 +1,23 @@
 :root {
   font-family: Tahoma, Verdana, Segoe UI, Arial, sans-serif;
-  color: #f4efe2;
-  background-color: #080808;
-  --gold: #d9a84e;
-  --gold-soft: #f7d28a;
-  --panel-bg: rgba(16, 14, 13, 0.84);
-  --panel-border: #6c5227;
-  --text-muted: #cabd9f;
+  color: #f5f0ff;
+  background-color: #0a0612;
+  /* Золото — класика L2; акценти — як на MMO-лендингах (обмежена палітра, високий контраст) */
+  --gold: #f5b73a;
+  --gold-soft: #ffe08a;
+  --accent-cyan: #5ce1e6;
+  --accent-cyan-dim: #2a9da1;
+  --accent-violet: #c084fc;
+  --accent-magenta: #f472b6;
+  --accent-orange: #fb923c;
+  --panel-bg: rgba(22, 14, 38, 0.9);
+  --panel-bg-soft: rgba(30, 20, 52, 0.75);
+  --panel-border: rgba(192, 132, 252, 0.35);
+  --panel-border-glow: rgba(92, 225, 230, 0.4);
+  --text-muted: #d4c8e8;
   --header-action-height: 2.5rem;
+  --glow-cta: 0 0 20px rgba(251, 146, 60, 0.4), 0 0 40px rgba(92, 225, 230, 0.2);
+  --glow-subtle: 0 0 24px rgba(192, 132, 252, 0.15);
   line-height: 1.5;
 }
 
@@ -26,8 +36,30 @@ body,
 
 body {
   min-height: 100vh;
+  background-color: #0a0612;
+  /* Краща практика: темна база + кольорові «прожектори» + виньєтка, фото лишається читабельним */
   background-image:
-    linear-gradient(rgba(6, 6, 6, 0.88), rgba(6, 6, 6, 0.92)),
+    radial-gradient(
+      ellipse 130% 90% at 50% -25%,
+      rgba(192, 132, 252, 0.22),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 90% 60% at 100% 100%,
+      rgba(92, 225, 230, 0.14),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 70% 50% at 0% 85%,
+      rgba(244, 114, 182, 0.12),
+      transparent 45%
+    ),
+    linear-gradient(
+      165deg,
+      rgba(10, 6, 18, 0.88) 0%,
+      rgba(14, 8, 28, 0.9) 45%,
+      rgba(8, 4, 16, 0.92) 100%
+    ),
     url("https://crazzd.com/images/s4d9JN.jpg");
   background-size: cover;
   background-position: center;

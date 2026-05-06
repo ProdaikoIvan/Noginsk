@@ -3,10 +3,17 @@
   top: 0;
   z-index: 10;
   background:
-    linear-gradient(rgba(4, 4, 4, 0.95), rgba(4, 4, 4, 0.88)),
+    linear-gradient(
+      180deg,
+      rgba(18, 10, 32, 0.97) 0%,
+      rgba(12, 8, 24, 0.94) 100%
+    ),
     url("https://crazzd.com/images/server-section-slider-for-item-border-top.png");
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--panel-border);
+  box-shadow:
+    0 1px 0 rgba(92, 225, 230, 0.22),
+    0 8px 28px rgba(0, 0, 0, 0.4);
 }
 
 .container {
@@ -26,10 +33,12 @@
   border-radius: 0.45rem;
   background: linear-gradient(
     145deg,
-    rgba(40, 28, 14, 0.95),
-    rgba(18, 14, 10, 0.98)
+    rgba(60, 30, 80, 0.55),
+    rgba(18, 12, 32, 0.95)
   );
-  box-shadow: inset 0 1px 0 rgba(247, 210, 138, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 224, 138, 0.12),
+    var(--glow-subtle);
 }
 
 .brandText {
@@ -38,11 +47,15 @@
   font-size: clamp(0.7rem, 2.1vw, 0.95rem);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+  background: linear-gradient(
+    135deg,
+    var(--gold-soft) 0%,
+    var(--gold) 40%,
+    var(--accent-cyan) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
   line-height: 1.25;
   max-width: 14rem;
 }
@@ -54,18 +67,25 @@
   flex-shrink: 0;
 
   a {
-    color: #e8d7b5;
+    color: #e8ddf8;
     text-decoration: none;
     font-weight: 500;
     padding-bottom: 0.2rem;
     border-bottom: 1px solid transparent;
     white-space: nowrap;
+    transition:
+      color 0.15s ease,
+      border-color 0.15s ease;
   }
 
-  a:hover,
+  a:hover {
+    color: var(--accent-cyan);
+    border-bottom-color: var(--accent-cyan-dim);
+  }
+
   a[aria-current="page"] {
     color: var(--gold-soft);
-    border-bottom-color: var(--gold);
+    border-bottom-color: var(--accent-violet);
   }
 }
 
@@ -97,7 +117,11 @@
   height: var(--header-action-height);
   padding: 0 0.85rem;
   border: 1px solid var(--panel-border);
-  background: rgba(48, 35, 21, 0.85);
+  background: linear-gradient(
+    180deg,
+    rgba(45, 30, 70, 0.9),
+    rgba(22, 14, 38, 0.95)
+  );
   color: var(--gold-soft);
   font-weight: 600;
   font-size: 0.875rem;
@@ -105,32 +129,49 @@
   border-radius: 0.45rem;
   cursor: pointer;
   white-space: nowrap;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    color 0.15s ease;
 
   &:hover {
-    border-color: var(--gold);
-    color: #fff5e0;
+    border-color: var(--accent-cyan);
+    color: #fff;
+    box-shadow: 0 0 16px rgba(92, 225, 230, 0.25);
   }
 }
 
 .authButtonPrimary {
-  border-color: #bd8e3f;
-  background: linear-gradient(180deg, #dcb36b, #b07b33);
-  color: #2b1d0e;
+  border-color: rgba(251, 146, 60, 0.65);
+  background: linear-gradient(
+    135deg,
+    #fcd34d 0%,
+    var(--accent-orange) 45%,
+    #ea580c 100%
+  );
+  color: #1a0a02;
+  box-shadow: 0 2px 12px rgba(251, 146, 60, 0.35);
 
   &:hover {
-    filter: brightness(1.06);
-    color: #1a1208;
+    filter: brightness(1.08);
+    color: #0f0500;
+    box-shadow: var(--glow-cta);
   }
 }
 
 .mobileButton {
   display: none;
   border: 1px solid var(--panel-border);
-  background: rgba(48, 35, 21, 0.8);
+  background: rgba(30, 20, 52, 0.9);
   color: var(--gold-soft);
   padding: 0.3rem 0.55rem;
   border-radius: 0.5rem;
   cursor: pointer;
+  transition: border-color 0.15s ease;
+
+  &:hover {
+    border-color: var(--accent-violet);
+  }
 }
 
 @media (min-width: 901px) {

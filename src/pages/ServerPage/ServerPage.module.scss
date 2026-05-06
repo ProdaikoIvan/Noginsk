@@ -39,9 +39,10 @@
   padding: 1rem 1rem 1.1rem;
   border-radius: 0.85rem;
   border: 1px solid var(--panel-border);
-  background: rgba(12, 10, 8, 0.92);
+  background: var(--panel-bg-soft);
   max-height: calc(100vh - 5.5rem);
   overflow: auto;
+  box-shadow: var(--glow-subtle);
 }
 
 .tocTitle {
@@ -50,7 +51,7 @@
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--accent-violet);
 }
 
 .tocList {
@@ -74,19 +75,19 @@
   cursor: pointer;
   border: 1px solid transparent;
   background: transparent;
-  color: #e8d7b5;
+  color: #e8ddf8;
 }
 
 .tocButton:hover {
-  background: rgba(217, 168, 78, 0.08);
-  color: var(--gold-soft);
-  border-color: #3a2c18;
+  background: rgba(92, 225, 230, 0.08);
+  color: var(--accent-cyan);
+  border-color: rgba(92, 225, 230, 0.25);
 }
 
 .tocButtonActive {
-  background: rgba(217, 168, 78, 0.14);
+  background: rgba(192, 132, 252, 0.12);
   color: var(--gold-soft);
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid var(--accent-cyan);
   padding-left: calc(0.5rem - 2px);
 }
 
@@ -97,8 +98,9 @@
 .detail {
   padding: 1.25rem 1.35rem;
   border-radius: 0.85rem;
-  border: 1px solid #3a2c18;
-  background: rgba(18, 15, 12, 0.88);
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
 .detailTitle {
@@ -121,7 +123,7 @@
 .detailList {
   margin: 0;
   padding-left: 1.15rem;
-  color: #f1e4cb;
+  color: #f0e8ff;
   display: grid;
   gap: 0.45rem;
   line-height: 1.5;
@@ -152,13 +154,12 @@
   .tocButton,
   .tocButtonActive {
     width: 100%;
-    border: 1px solid #3a2c18;
+    border: 1px solid var(--panel-border);
     text-align: center;
   }
 
   .tocButtonActive {
-    border-left: 1px solid var(--gold);
-    border-color: var(--gold);
+    border-color: var(--accent-cyan);
     padding-left: 0.5rem;
   }
 }

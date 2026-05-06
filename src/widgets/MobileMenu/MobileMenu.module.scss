@@ -8,8 +8,9 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease;
-    background: rgba(7, 6, 5, 0.95);
+    background: rgba(12, 8, 24, 0.97);
     border-top: 1px solid var(--panel-border);
+    box-shadow: 0 1px 0 rgba(92, 225, 230, 0.15);
   }
 
   .open {
@@ -23,11 +24,19 @@
 
     a {
       text-decoration: none;
-      color: #ebddc2;
+      color: #ede8f5;
       padding: 0.5rem 0.7rem;
-      border: 1px solid #3f2f1a;
+      border: 1px solid rgba(192, 132, 252, 0.3);
       border-radius: 0.45rem;
-      background: rgba(30, 24, 18, 0.92);
+      background: rgba(26, 18, 48, 0.85);
+      transition:
+        border-color 0.15s ease,
+        color 0.15s ease;
+
+      &:hover {
+        border-color: var(--accent-cyan);
+        color: var(--accent-cyan);
+      }
     }
   }
 
@@ -40,7 +49,11 @@
 
   .authButton {
     border: 1px solid var(--panel-border);
-    background: rgba(48, 35, 21, 0.85);
+    background: linear-gradient(
+      180deg,
+      rgba(45, 30, 70, 0.9),
+      rgba(22, 14, 38, 0.95)
+    );
     color: var(--gold-soft);
     font-weight: 600;
     padding: 0.55rem 0.5rem;
@@ -49,8 +62,14 @@
   }
 
   .authButtonPrimary {
-    border-color: #bd8e3f;
-    background: linear-gradient(180deg, #dcb36b, #b07b33);
-    color: #2b1d0e;
+    border-color: rgba(251, 146, 60, 0.65);
+    background: linear-gradient(
+      135deg,
+      #fcd34d 0%,
+      var(--accent-orange) 50%,
+      #ea580c 100%
+    );
+    color: #1a0a02;
+    box-shadow: 0 2px 12px rgba(251, 146, 60, 0.3);
   }
 }
