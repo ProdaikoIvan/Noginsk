@@ -71,16 +71,12 @@
     color: #e8ddf8;
     text-decoration: none;
     width: fit-content;
-    border-bottom: 1px solid transparent;
-    transition:
-      color 0.15s ease,
-      border-color 0.15s ease;
+    transition: color 0.15s ease;
   }
 
   a:hover,
   a[aria-current="page"] {
     color: var(--accent-cyan);
-    border-bottom-color: var(--accent-cyan-dim);
   }
 }
 
