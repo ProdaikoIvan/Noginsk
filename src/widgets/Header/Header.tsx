@@ -58,7 +58,7 @@ export const Header = () => {
                   onClick={handleLogout}
                   disabled={isLoggingOut}
                 >
-                  {isLoggingOut ? 'Loading...' : 'Logout'}
+                  {isLoggingOut ? t.auth.loading : t.auth.logout}
                 </button>
               </>
             ) : (

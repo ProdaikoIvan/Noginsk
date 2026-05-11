@@ -159,7 +159,9 @@ export const translations: Record<Locale, TranslationSchema> = {
         passwordMinLength: "Пароль повинен містити мінімум 8 символів"
       },
       noAccount: "Немає акаунта?",
-      hasAccount: "Вже є акаунт?"
+      hasAccount: "Вже є акаунт?",
+      logout: "Вийти",
+      loading: "Завантаження..."
     },
     payment: {
       title: "Купити золоті монети",
@@ -353,7 +355,9 @@ export const translations: Record<Locale, TranslationSchema> = {
         passwordMinLength: "Пароль должен содержать минимум 8 символов"
       },
       noAccount: "Нет аккаунта?",
-      hasAccount: "Уже есть аккаунт?"
+      hasAccount: "Уже есть аккаунт?",
+      logout: "Выйти",
+      loading: "Загрузка..."
     },
     payment: {
       title: "Купить золотые монеты",

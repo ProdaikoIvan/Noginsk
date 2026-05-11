@@ -64,6 +64,8 @@ export type TranslationSchema = {
     };
     noAccount: string;
     hasAccount: string;
+    logout: string;
+    loading: string;
   };
   payment: {
     title: string;
