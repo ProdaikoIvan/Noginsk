@@ -1,4 +1,4 @@
-import { StatCategory, CategoryData, PlayerStats } from '../model/types';
+import { StatCategory, CategoryData } from '../model/types';
 
 // Mock API service - in real app this would make HTTP requests to backend
 export class StatisticsApiService {
@@ -207,7 +207,7 @@ export class StatisticsApiService {
               level: 82,
               class: "Merchant",
               clan: "Trade Guild",
-              points: "1250"
+              points: 1250
             },
             {
               name: "GoldHunter",
@@ -215,7 +215,7 @@ export class StatisticsApiService {
               level: 79,
               class: "Warrior",
               clan: "Elite",
-              points: "980"
+              points: 980
             },
             {
               name: "RichMage",
@@ -223,7 +223,7 @@ export class StatisticsApiService {
               level: 85,
               class: "Mage",
               clan: "Mystic Order",
-              points: "1120"
+              points: 1120
             },
             {
               name: "TreasureSeeker",
@@ -231,7 +231,7 @@ export class StatisticsApiService {
               level: 77,
               class: "Rogue",
               clan: "Dark Brotherhood",
-              points: "890"
+              points: 890
             },
             {
               name: "WealthyLord",
@@ -239,7 +239,7 @@ export class StatisticsApiService {
               level: 80,
               class: "Paladin",
               clan: "Light Guard",
-              points: "760"
+              points: 760
             }
           ]
         };
