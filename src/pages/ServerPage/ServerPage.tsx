@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useI18n } from "../../shared/i18n/I18nProvider";
-import { ServerPageBlock } from "./ServerPageBlock";
-import { ServerPageToc } from "./ServerPageToc";
+import { ServerPageBlock } from "./ui/ServerPageBlock";
+import { ServerPageToc } from "./ui/ServerPageToc";
 import styles from "./ServerPage.module.scss";
 
 export const ServerPage = () => {

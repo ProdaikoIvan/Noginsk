@@ -1,0 +1,110 @@
+.packageCard {
+  border: 2px solid var(--panel-border);
+  border-radius: 0.4rem;
+  background: var(--panel-bg);
+  padding: 0.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    border-color: var(--accent-cyan);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2), var(--glow-subtle);
+  }
+
+  &.selected {
+    border-color: var(--gold-soft);
+    background: linear-gradient(
+      135deg,
+      rgba(252, 211, 77, 0.08) 0%,
+      var(--panel-bg) 100%
+    );
+    box-shadow: 0 2px 12px rgba(252, 211, 77, 0.1), var(--glow-subtle);
+
+    &::before {
+      content: "✓";
+      position: absolute;
+      top: 0.2rem;
+      right: 0.2rem;
+      background: var(--gold-soft);
+      color: #1a0a02;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.4rem;
+    }
+  }
+}
+
+.packageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.15rem;
+
+  h3 {
+    margin: 0;
+    color: var(--gold-soft);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1px;
+    line-height: 1;
+  }
+}
+
+.bonus {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+  color: white;
+  padding: 0.05rem 0.2rem;
+  border-radius: 0.8rem;
+  font-size: 0.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+}
+
+.coins {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.15rem 0;
+  gap: 0.15rem;
+}
+
+.coinIcon {
+  font-size: 0.9rem;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.coinAmount {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gold-soft);
+  text-shadow: 0 1px 2px rgba(252, 211, 77, 0.3);
+}
+
+.price {
+  text-align: center;
+  padding-top: 0.15rem;
+  border-top: 1px solid var(--panel-border);
+}
+
+.currency {
+  color: #ede8f5;
+  font-size: 0.7rem;
+  margin-right: 0.2rem;
+}
+
+.amount {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f5ecff;
+}

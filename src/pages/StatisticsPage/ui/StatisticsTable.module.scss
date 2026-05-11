@@ -1,0 +1,171 @@
+.statsTable {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  table-layout: fixed;
+}
+
+.statsTable thead {
+  background: rgba(92, 225, 230, 0.1);
+  border-bottom: 2px solid var(--accent-cyan);
+}
+
+.statsTable th {
+  color: var(--accent-cyan);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.6rem 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.tableRow {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+  }
+}
+
+.statsTable td {
+  color: #f5ecff;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0;
+}
+
+.rankCell {
+  text-align: center;
+  width: 80px;
+  position: relative;
+}
+
+.rankNumber {
+  color: var(--gold-soft);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.crown {
+  font-size: 1.2rem;
+  margin-left: 0.25rem;
+}
+
+.medal {
+  font-size: 1rem;
+  margin-left: 0.25rem;
+}
+
+.playerNameCell {
+  font-weight: 600;
+  color: #f5ecff;
+}
+
+.clanCell {
+  color: var(--accent-cyan);
+  font-weight: 500;
+}
+
+.classCell {
+  color: #ede8f5;
+}
+
+.levelCell {
+  text-align: center;
+  color: #f5ecff;
+  font-weight: 500;
+}
+
+.killsCell {
+  text-align: center;
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.deathsCell {
+  text-align: center;
+  color: #f87171;
+  font-weight: 600;
+}
+
+.kdrCell {
+  text-align: center;
+  color: var(--gold-soft);
+  font-weight: 600;
+}
+
+.loading {
+  color: var(--gold-soft);
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  animation: pulse 1.5s infinite;
+}
+
+.error {
+  color: #f87171;
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+@media (max-width: 768px) {
+  .statsTable {
+    font-size: 0.75rem;
+  }
+
+  .statsTable th,
+  .statsTable td {
+    padding: 0.4rem 0.3rem;
+  }
+
+  .rankCell {
+    width: 60px;
+  }
+
+  .crown,
+  .medal {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .statsTable {
+    font-size: 0.7rem;
+  }
+
+  .statsTable th,
+  .statsTable td {
+    padding: 0.3rem 0.2rem;
+  }
+
+  .statsTable th {
+    font-size: 0.65rem;
+  }
+
+  .rankCell {
+    width: 50px;
+  }
+}

@@ -1,4 +1,4 @@
-import styles from "./ServerPage.module.scss";
+import styles from "../ServerPage.module.scss";
 
 type Block = {
   id: string;

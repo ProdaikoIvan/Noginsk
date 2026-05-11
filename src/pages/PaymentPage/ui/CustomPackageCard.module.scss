@@ -1,0 +1,63 @@
+.customCard {
+  grid-column: span 1;
+}
+
+.customInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.15rem 0;
+  gap: 0.15rem;
+}
+
+.amountInput {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--panel-border);
+  border-radius: 0.3rem;
+  color: #f5ecff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.4rem;
+  text-align: center;
+  width: 100%;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  &::placeholder {
+    color: rgba(245, 236, 255, 0.5);
+    font-size: 0.8rem;
+  }
+}
+
+.minAmount {
+  color: #ede8f5;
+  font-size: 0.6rem;
+  text-align: center;
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+.pricePerCoin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  margin-top: 0.15rem;
+
+  span:first-child {
+    color: #ede8f5;
+    font-size: 0.55rem;
+  }
+
+  span:last-child {
+    color: var(--gold-soft);
+    font-weight: 600;
+    font-size: 0.7rem;
+  }
+}

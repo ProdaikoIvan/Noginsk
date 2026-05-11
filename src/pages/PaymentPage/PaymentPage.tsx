@@ -1,13 +1,9 @@
 import { useState } from "react";
 import { useI18n } from "../../shared/i18n/I18nProvider";
 import styles from "./PaymentPage.module.scss";
-
-interface PaymentPackage {
-  id: string;
-  coins: number;
-  price: number;
-  bonus?: number;
-}
+import { PaymentPackageCard, PaymentPackage } from "./ui/PaymentPackageCard";
+import { CustomPackageCard } from "./ui/CustomPackageCard";
+import { PaymentSummary } from "./ui/PaymentSummary";
 
 export const PaymentPage = () => {
   const { t } = useI18n();
@@ -85,124 +81,30 @@ export const PaymentPage = () => {
           <div className={styles.packagesSection}>
             <div className={styles.packagesGrid}>
               {packages.map((pkg) => (
-                <div
+                <PaymentPackageCard
                   key={pkg.id}
-                  className={`${styles.packageCard} ${
-                    selectedPackage === pkg.id ? styles.selected : ""
-                  }`}
-                  onClick={() => handlePackageSelect(pkg.id)}
-                >
-                  <div className={styles.packageHeader}>
-                    <h3>{t.payment.packages[pkg.id as keyof typeof t.payment.packages] || pkg.id}</h3>
-                    {pkg.bonus && (
-                      <span className={styles.bonus}>+{pkg.bonus} {t.payment.bonus}</span>
-                    )}
-                  </div>
-                  <div className={styles.coins}>
-                    <span className={styles.coinIcon}>🪙</span>
-                    <span className={styles.coinAmount}>{pkg.coins + (pkg.bonus || 0)}</span>
-                  </div>
-                  <div className={styles.price}>
-                    <span className={styles.currency}>{t.payment.currency}</span>
-                    <span className={styles.amount}>{pkg.price}</span>
-                  </div>
-                </div>
+                  pkg={pkg}
+                  isSelected={selectedPackage === pkg.id}
+                  onSelect={() => handlePackageSelect(pkg.id)}
+                />
               ))}
               
-              {/* Custom Amount Card */}
-              <div
-                className={`${styles.packageCard} ${styles.customCard} ${
-                  selectedPackage === "custom" ? styles.selected : ""
-                }`}
-                onClick={() => handlePackageSelect("custom")}
-              >
-                <div className={styles.packageHeader}>
-                  <h3>{t.payment.packages.custom}</h3>
-                </div>
-                <div className={styles.customInput}>
-                  <input
-                    type="number"
-                    value={customAmount}
-                    onChange={(e) => handleCustomAmountChange(e.target.value)}
-                    placeholder={t.payment.enterAmount}
-                    min={MIN_AMOUNT}
-                    className={styles.amountInput}
-                    onClick={(e) => e.stopPropagation()}
-                  />
-                  <span className={styles.coinIcon}>🪙</span>
-                </div>
-                <div className={styles.price}>
-                  <span className={styles.minAmount}>{t.payment.minAmount}</span>
-                  <div className={styles.pricePerCoin}>
-                    <span className={styles.currency}>{t.payment.pricePerCoin}:</span>
-                    <span>{PRICE_PER_COIN} {t.payment.currency}</span>
-                  </div>
-                </div>
-              </div>
+              <CustomPackageCard
+                customAmount={customAmount}
+                isSelected={selectedPackage === "custom"}
+                onSelect={() => handlePackageSelect("custom")}
+                onAmountChange={handleCustomAmountChange}
+                minAmount={MIN_AMOUNT}
+                pricePerCoin={PRICE_PER_COIN}
+              />
             </div>
           </div>
 
-          <div className={styles.paymentDetails}>
-            {selectedPackageData && (
-              <div className={styles.selectedInfo}>
-                <h3>{t.payment.selectedPackage}</h3>
-                <div className={styles.summary}>
-                  <div className={styles.summaryItem}>
-                    <span>{t.payment.totalCoins}:</span>
-                    <span>
-                      {selectedPackageData.coins + (selectedPackageData.bonus || 0)} 🪙
-                    </span>
-                  </div>
-                  <div className={styles.summaryItem}>
-                    <span>{t.payment.totalPrice}:</span>
-                    <span>
-                      {t.payment.currency} {selectedPackageData.price}
-                    </span>
-                  </div>
-                  {selectedPackageData.bonus && (
-                    <div className={styles.summaryItem}>
-                      <span>{t.payment.bonusCoins}:</span>
-                      <span className={styles.bonusText}>+{selectedPackageData.bonus} 🪙</span>
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
-
-            <div className={styles.paymentSection}>
-              <h3>{t.payment.paymentMethod}</h3>
-              <div className={styles.paymentMethods}>
-                <label className={styles.paymentMethod}>
-                  <input type="radio" name="payment" defaultChecked />
-                  <span className={styles.methodIcon}>💳</span>
-                  <span>{t.payment.methods.card}</span>
-                </label>
-                <label className={styles.paymentMethod}>
-                  <input type="radio" name="payment" />
-                  <span className={styles.methodIcon}>📱</span>
-                  <span>{t.payment.methods.mobile}</span>
-                </label>
-                <label className={styles.paymentMethod}>
-                  <input type="radio" name="payment" />
-                  <span className={styles.methodIcon}>🏦</span>
-                  <span>{t.payment.methods.bank}</span>
-                </label>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              className={styles.payButton}
-              onClick={handlePayment}
-              disabled={!selectedPackage || isLoading}
-            >
-              {isLoading ? t.payment.processing : t.payment.payButton}
-            </button>
-
-            <div className={styles.info}>
-              <p>{t.payment.info}</p>
-            </div>
-          </div>
+          <PaymentSummary
+            selectedPackageData={selectedPackageData}
+            isLoading={isLoading}
+            onPayment={handlePayment}
+          />
         </div>
       </div>
     </section>
