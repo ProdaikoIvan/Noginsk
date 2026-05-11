@@ -111,6 +111,27 @@
   flex-shrink: 0;
 }
 
+.userInfo {
+  color: var(--gold-soft);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0 0.85rem;
+  display: inline-block;
+  line-height: var(--header-action-height);
+  height: var(--header-action-height);
+  border: 1px solid rgba(251, 146, 60, 0.3);
+  border-radius: 0.45rem;
+  background: linear-gradient(
+    180deg,
+    rgba(45, 30, 70, 0.9),
+    rgba(22, 14, 38, 0.95)
+  );
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .authButton {
   display: none;
   box-sizing: border-box;
@@ -164,7 +185,8 @@
   border: 1px solid var(--panel-border);
   background: rgba(30, 20, 52, 0.9);
   color: var(--gold-soft);
-  padding: 0.3rem 0.55rem;
+  height: var(--header-action-height);
+  padding: 0 0.85rem;
   border-radius: 0.5rem;
   cursor: pointer;
   transition: border-color 0.15s ease;
@@ -193,6 +215,7 @@
 
   .mobileButton {
     display: inline-flex;
+    align-items: center;
   }
 
   .brandText {

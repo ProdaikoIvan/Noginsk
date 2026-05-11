@@ -1,15 +1,25 @@
 import { useI18n } from "../../shared/i18n/I18nProvider";
+import { useNavigate } from "react-router-dom";
+import { AppRoute } from "../../shared/config/routes";
 import styles from "./HomePage.module.scss";
 
 export const HomePage = () => {
   const { t } = useI18n();
+  const navigate = useNavigate();
+
+  const handleCtaClick = () => {
+    navigate(AppRoute.Register);
+  };
 
   return (
     <section className={styles.page}>
       <div className={styles.hero}>
         <h1>{t.home.title}</h1>
         <p>{t.home.subtitle}</p>
-        <button type="button">{t.home.cta}</button>
+        <p className={styles.serverBy}>{t.common.serverBy} Noginsk</p>
+        <button type="button" onClick={handleCtaClick}>
+          {t.home.cta}
+        </button>
       </div>
 
       <div className={styles.grid}>

@@ -4,6 +4,8 @@ export type TranslationSchema = {
   nav: {
     home: string;
     server: string;
+    statistics: string;
+    payment: string;
     login: string;
     register: string;
   };
@@ -53,5 +55,47 @@ export type TranslationSchema = {
     password: string;
     submitLogin: string;
     submitRegister: string;
+    errors: {
+      usernameRequired: string;
+      emailRequired: string;
+      emailInvalid: string;
+      passwordRequired: string;
+      passwordMinLength: string;
+    };
+    noAccount: string;
+    hasAccount: string;
+  };
+  payment: {
+    title: string;
+    subtitle: string;
+    packages: {
+      starter: string;
+      bronze: string;
+      silver: string;
+      gold: string;
+      platinum: string;
+      diamond: string;
+      custom: string;
+    };
+    bonus: string;
+    currency: string;
+    selectedPackage: string;
+    totalCoins: string;
+    totalPrice: string;
+    bonusCoins: string;
+    paymentMethod: string;
+    methods: {
+      card: string;
+      mobile: string;
+      bank: string;
+    };
+    payButton: string;
+    processing: string;
+    successMessage: string;
+    info: string;
+    customAmount: string;
+    enterAmount: string;
+    minAmount: string;
+    pricePerCoin: string;
   };
 };

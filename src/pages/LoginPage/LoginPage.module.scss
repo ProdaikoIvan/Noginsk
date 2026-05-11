@@ -14,4 +14,39 @@
   h1 {
     color: var(--gold-soft);
   }
+
+  .error {
+    color: var(--accent-orange);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid rgba(251, 146, 60, 0.3);
+    border-radius: 0.5rem;
+    background: rgba(251, 146, 60, 0.1);
+  }
+
+  .authLink {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ede8f5;
+    margin-top: 0.5rem;
+
+    .linkButton {
+      background: none;
+      border: none;
+      color: var(--accent-cyan);
+      cursor: pointer;
+      font-size: inherit;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s ease;
+      padding: 0;
+
+      &:hover {
+        color: var(--gold-soft);
+      }
+    }
+  }
 }

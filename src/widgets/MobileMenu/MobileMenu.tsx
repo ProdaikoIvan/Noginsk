@@ -1,6 +1,9 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AppRoute } from "../../shared/config/routes";
 import { useI18n } from "../../shared/i18n/I18nProvider";
+import { logout } from "../../shared/api/authApi";
+import { useAuth } from "../../shared/hooks/useAuth";
+import { useState } from "react";
 import styles from "./MobileMenu.module.scss";
 
 type Props = {
@@ -10,11 +13,21 @@ type Props = {
 
 export const MobileMenu = ({ isOpen, onClose }: Props) => {
   const { t } = useI18n();
-  const navigate = useNavigate();
+  const { user } = useAuth();
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
 
-  const go = (path: AppRoute) => {
-    navigate(path);
-    onClose();
+  const handleLogout = async () => {
+    setIsLoggingOut(true);
+    try {
+      await logout();
+      onClose();
+      // Navigate to home will be handled by NavLink in the menu
+      window.location.href = AppRoute.Home;
+    } catch (error) {
+      console.error('Logout failed:', error);
+    } finally {
+      setIsLoggingOut(false);
+    }
   };
 
   return (
@@ -26,21 +39,40 @@ export const MobileMenu = ({ isOpen, onClose }: Props) => {
         <NavLink to={AppRoute.Server} onClick={onClose}>
           {t.nav.server}
         </NavLink>
+        <NavLink to={AppRoute.Statistics} onClick={onClose}>
+          {t.nav.statistics}
+        </NavLink>
+        <NavLink to={AppRoute.Payment} onClick={onClose}>
+          {t.nav.payment}
+        </NavLink>
         <div className={styles.authRow}>
-          <button
-            type="button"
-            className={styles.authButton}
-            onClick={() => go(AppRoute.Login)}
-          >
-            {t.nav.login}
-          </button>
-          <button
-            type="button"
-            className={`${styles.authButton} ${styles.authButtonPrimary}`}
-            onClick={() => go(AppRoute.Register)}
-          >
-            {t.nav.register}
-          </button>
+          {user ? (
+            <>
+              <div className={styles.mobileUserInfo}>
+                {user.username}
+              </div>
+              <button
+                type="button"
+                className={styles.authButton}
+                onClick={handleLogout}
+                disabled={isLoggingOut}
+              >
+                {isLoggingOut ? 'Loading...' : 'Logout'}
+              </button>
+            </>
+          ) : (
+            <>
+              <NavLink to={AppRoute.Login} className={styles.authButton}>
+                {t.nav.login}
+              </NavLink>
+              <NavLink 
+                to={AppRoute.Register} 
+                className={`${styles.authButton} ${styles.authButtonPrimary}`}
+              >
+                {t.nav.register}
+              </NavLink>
+            </>
+          )}
         </div>
       </nav>
     </div>

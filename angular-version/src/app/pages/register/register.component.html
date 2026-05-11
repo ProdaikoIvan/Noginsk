@@ -1,0 +1,48 @@
+<section class="page">
+  <h1>{{ authData().registerTitle }}</h1>
+  @if (error) {
+    <div class="error">{{ error }}</div>
+  }
+  
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <label>
+      <span>{{ authData().username }} *</span>
+      <input 
+        formControlName="username" 
+        type="text"
+        [class.error]="isFieldInvalid('username')"
+      />
+      @if (getFieldError('username')) {
+        <span class="error-message">{{ getFieldError('username') }}</span>
+      }
+    </label>
+
+    <label>
+      <span>{{ authData().email }} *</span>
+      <input 
+        formControlName="email" 
+        type="email"
+        [class.error]="isFieldInvalid('email')"
+      />
+      @if (getFieldError('email')) {
+        <span class="error-message">{{ getFieldError('email') }}</span>
+      }
+    </label>
+
+    <label>
+      <span>{{ authData().password }} *</span>
+      <input 
+        formControlName="password" 
+        type="password"
+        [class.error]="isFieldInvalid('password')"
+      />
+      @if (getFieldError('password')) {
+        <span class="error-message">{{ getFieldError('password') }}</span>
+      }
+    </label>
+
+    <button type="submit" [disabled]="isLoading">
+      {{ isLoading ? 'Loading...' : authData().submitRegister }}
+    </button>
+  </form>
+</section>

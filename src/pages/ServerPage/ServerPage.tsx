@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useI18n } from "../../shared/i18n/I18nProvider";
 import { ServerPageBlock } from "./ServerPageBlock";
 import { ServerPageToc } from "./ServerPageToc";
@@ -10,15 +10,9 @@ export const ServerPage = () => {
 
   const [activeId, setActiveId] = useState(() => blocks[0]?.id ?? "");
 
-  const tocItems = useMemo(
-    () => blocks.map((b) => ({ id: b.id, title: b.title })),
-    [blocks]
-  );
+  const tocItems = blocks.map((b) => ({ id: b.id, title: b.title }));
 
-  const activeBlock = useMemo(
-    () => blocks.find((b) => b.id === activeId) ?? blocks[0],
-    [blocks, activeId]
-  );
+  const activeBlock = blocks.find((b) => b.id === activeId) ?? blocks[0];
 
   return (
     <div className={styles.wrapper}>

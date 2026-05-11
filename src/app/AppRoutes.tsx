@@ -3,6 +3,8 @@ import { HomePage } from "../pages/HomePage/HomePage";
 import { LoginPage } from "../pages/LoginPage/LoginPage";
 import { RegisterPage } from "../pages/RegisterPage/RegisterPage";
 import { ServerPage } from "../pages/ServerPage/ServerPage";
+import { PaymentPage } from "../pages/PaymentPage/PaymentPage";
+import { StatisticsPage } from "../pages/StatisticsPage/StatisticsPage";
 import { AppRoute } from "../shared/config/routes";
 
 export const AppRoutes = () => {
@@ -10,6 +12,8 @@ export const AppRoutes = () => {
     <Routes>
       <Route path={AppRoute.Home} element={<HomePage />} />
       <Route path={AppRoute.Server} element={<ServerPage />} />
+      <Route path={AppRoute.Statistics} element={<StatisticsPage />} />
+      <Route path={AppRoute.Payment} element={<PaymentPage />} />
       <Route path={AppRoute.Login} element={<LoginPage />} />
       <Route path={AppRoute.Register} element={<RegisterPage />} />
       <Route path="*" element={<Navigate to={AppRoute.Home} replace />} />

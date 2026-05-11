@@ -5,6 +5,8 @@ export const translations: Record<Locale, TranslationSchema> = {
     nav: {
       home: "Головна",
       server: "Про сервер",
+      statistics: "Статистика",
+      payment: "Оплата",
       login: "Логін",
       register: "Реєстрація"
     },
@@ -148,13 +150,57 @@ export const translations: Record<Locale, TranslationSchema> = {
       email: "Email",
       password: "Пароль",
       submitLogin: "Увійти",
-      submitRegister: "Зареєструватися"
+      submitRegister: "Зареєструватися",
+      errors: {
+        usernameRequired: "Ім'я користувача є обов'язковим",
+        emailRequired: "Email є обов'язковим",
+        emailInvalid: "Будь ласка, введіть коректний email",
+        passwordRequired: "Пароль є обов'язковим",
+        passwordMinLength: "Пароль повинен містити мінімум 8 символів"
+      },
+      noAccount: "Немає акаунта?",
+      hasAccount: "Вже є акаунт?"
+    },
+    payment: {
+      title: "Купити золоті монети",
+      subtitle: "Оберіть пакет монет або введіть власну кількість",
+      packages: {
+        starter: "Стартовий",
+        bronze: "Бронзовий",
+        silver: "Срібний",
+        gold: "Золотий",
+        platinum: "Платиновий",
+        diamond: "Діамантовий",
+        custom: "Власна кількість"
+      },
+      bonus: "бонус",
+      currency: "грн",
+      selectedPackage: "Обраний пакет",
+      totalCoins: "Всього монет",
+      totalPrice: "До сплати",
+      bonusCoins: "Бонусні монети",
+      paymentMethod: "Спосіб оплати",
+      methods: {
+        card: "Банківська картка",
+        mobile: "Мобільний платіж",
+        bank: "Банківський переказ"
+      },
+      payButton: "Оплатити",
+      processing: "Обробка...",
+      successMessage: "Оплату успішно завершено!",
+      info: "Монети будуть зараховані на ваш ігровий акаунт протягом 5-15 хвилин після успішної оплати.",
+      customAmount: "Власна кількість",
+      enterAmount: "Введіть кількість монет",
+      minAmount: "Мінімум: 100 монет",
+      pricePerCoin: "Ціна за монету"
     }
   },
   ru: {
     nav: {
       home: "Главная",
       server: "О сервере",
+      statistics: "Статистика",
+      payment: "Оплата",
       login: "Логин",
       register: "Регистрация"
     },
@@ -298,7 +344,49 @@ export const translations: Record<Locale, TranslationSchema> = {
       email: "Email",
       password: "Пароль",
       submitLogin: "Войти",
-      submitRegister: "Зарегистрироваться"
+      submitRegister: "Зарегистрироваться",
+      errors: {
+        usernameRequired: "Имя пользователя является обязательным",
+        emailRequired: "Email является обязательным",
+        emailInvalid: "Пожалуйста, введите корректный email",
+        passwordRequired: "Пароль является обязательным",
+        passwordMinLength: "Пароль должен содержать минимум 8 символов"
+      },
+      noAccount: "Нет аккаунта?",
+      hasAccount: "Уже есть аккаунт?"
+    },
+    payment: {
+      title: "Купить золотые монеты",
+      subtitle: "Выберите пакет монет или введите собственное количество",
+      packages: {
+        starter: "Стартовый",
+        bronze: "Бронзовый",
+        silver: "Серебряный",
+        gold: "Золотой",
+        platinum: "Платиновый",
+        diamond: "Алмазный",
+        custom: "Собственное количество"
+      },
+      bonus: "бонус",
+      currency: "грн",
+      selectedPackage: "Выбранный пакет",
+      totalCoins: "Всего монет",
+      totalPrice: "К оплате",
+      bonusCoins: "Бонусные монеты",
+      paymentMethod: "Способ оплаты",
+      methods: {
+        card: "Банковская карта",
+        mobile: "Мобильный платеж",
+        bank: "Банковский перевод"
+      },
+      payButton: "Оплатить",
+      processing: "Обработка...",
+      successMessage: "Оплата успешно завершена!",
+      info: "Монеты будут зачислены на ваш игровой аккаунт в течение 5-15 минут после успешной оплаты.",
+      customAmount: "Собственное количество",
+      enterAmount: "Введите количество монет",
+      minAmount: "Минимум: 100 монет",
+      pricePerCoin: "Цена за монету"
     }
   }
 };
