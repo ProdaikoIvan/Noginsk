@@ -1,4 +1,4 @@
-import { StatCategory } from "../../../../entities/statistics/model/types";
+import { StatCategory } from "../../../entities/statistics/model/types";
 import styles from "./StatisticsSidebar.module.scss";
 
 interface Props {

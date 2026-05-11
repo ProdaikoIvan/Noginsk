@@ -1,4 +1,4 @@
-import { CategoryData, PlayerStats } from "../../../../entities/statistics/model/types";
+import { CategoryData, PlayerStats } from "../../../entities/statistics/model/types";
 import styles from "./StatisticsTable.module.scss";
 
 interface Props {
