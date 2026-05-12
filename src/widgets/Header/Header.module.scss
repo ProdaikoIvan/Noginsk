@@ -190,6 +190,8 @@
   border-radius: 0.5rem;
   cursor: pointer;
   transition: border-color 0.15s ease;
+  position: relative;
+  z-index: 101;
 
   &:hover {
     border-color: var(--accent-violet);

@@ -62,12 +62,13 @@ export const MobileMenu = ({ isOpen, onClose }: Props) => {
             </>
           ) : (
             <>
-              <NavLink to={AppRoute.Login} className={styles.authButton}>
+              <NavLink to={AppRoute.Login} className={styles.authButton} onClick={onClose}>
                 {t.nav.login}
               </NavLink>
               <NavLink 
                 to={AppRoute.Register} 
                 className={`${styles.authButton} ${styles.authButtonPrimary}`}
+                onClick={onClose}
               >
                 {t.nav.register}
               </NavLink>
